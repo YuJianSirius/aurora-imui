@@ -47,8 +47,8 @@
             android:textAlignment="textEnd" />
 
         <RelativeLayout
-            android:layout_width="256dp"
-            android:layout_height="240dp"
+            android:layout_width="280dp"
+            android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:radius="10dp"
@@ -93,10 +93,10 @@
 
             <TextView
                 android:id="@+id/aurora_custom_order_address_name"
-                android:layout_width="232dp"
+                android:layout_width="257dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:layout_alignTop="@+id/aurora_custom_order_price"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="30dp"
                 android:text="TextView"
 
@@ -104,33 +104,34 @@
 
             <TextView
                 android:id="@+id/aurora_custom_order_address_phone"
-                android:layout_width="232dp"
+                android:layout_width="257dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
                 android:layout_alignTop="@+id/aurora_custom_order_address_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
 
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/aurora_custom_order_address_area"
-                android:layout_width="232dp"
+                android:layout_width="257dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_alignTop="@+id/aurora_custom_order_address_phone"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
 
                 android:text="TextView" />
 
 
             <TextView
                 android:id="@+id/aurora_custom_order_id"
-                android:layout_width="139dp"
-                android:layout_height="21dp"
-                android:layout_alignTop="@+id/aurora_custom_order_address_area"
-                android:layout_marginTop="50dp"
-                android:layout_alignLeft="@id/aurora_custom_order_address_area"
-                android:text="TextView" />
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/aurora_custom_order_img"
+                android:layout_marginBottom="10dp"
+                android:text="TextView"
+                android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/aurora_custom_order_status"

@@ -70,7 +70,7 @@ public class OrderViewHolder<MESSAGE extends IMessage> extends BaseMessageViewHo
         HashMap<String, String> messageExtra = message.getExtras();
 
         // product 赋值
-//        mImageLoader.loadImage(mProductImg, messageExtra.get("orderImg"));
+        mImageLoader.loadImage(mProductImg, messageExtra.get("orderImg"));
         mProductNameTv.setText(messageExtra.get("orderProductName"));
         mProductPriceTv.setText(messageExtra.get("orderProductRemark"));
 
