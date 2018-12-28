@@ -340,32 +340,33 @@ public class ReactChatInputManager extends ViewGroupManager<ChatInputView> imple
                 }
                 reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(mChatInput.getId(),
                         SWITCH_TO_CAMERA_EVENT, null);
-                if (mLastClickId == 2 && mShowMenu) {
-                    mShowMenu = false;
-                    mChatInput.dismissMenuLayout();
-                    mChatInput.dismissCameraLayout();
-                    sendSizeChangedEvent(mInitialChatInputHeight + mLineExpend);
-                } else if (mShowMenu) {
-                    mChatInput.initCamera();
-                    mChatInput.showMenuLayout();
-                    mChatInput.showCameraLayout();
-                    mChatInput.requestLayout();
-                } else {
-                    mShowMenu = true;
-//                    mChatInput.setPendingShowMenu(true);
-                    mChatInput.initCamera();
-                    EmoticonsKeyboardUtils.closeSoftKeyboard(editText);
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            mChatInput.showMenuLayout();
-                            mChatInput.showCameraLayout();
-                            sendSizeChangedEvent(calculateMenuHeight());
-                            mChatInput.requestLayout();
-                        }
-                    }, 100);
-                }
-                mLastClickId = 2;
+                    // mark - disable the camera reaction 
+//                 if (mLastClickId == 2 && mShowMenu) {
+//                     mShowMenu = false;
+//                     mChatInput.dismissMenuLayout();
+//                     mChatInput.dismissCameraLayout();
+//                     sendSizeChangedEvent(mInitialChatInputHeight + mLineExpend);
+//                 } else if (mShowMenu) {
+//                     mChatInput.initCamera();
+//                     mChatInput.showMenuLayout();
+//                     mChatInput.showCameraLayout();
+//                     mChatInput.requestLayout();
+//                 } else {
+//                     mShowMenu = true;
+// //                    mChatInput.setPendingShowMenu(true);
+//                     mChatInput.initCamera();
+//                     EmoticonsKeyboardUtils.closeSoftKeyboard(editText);
+//                     new Handler().postDelayed(new Runnable() {
+//                         @Override
+//                         public void run() {
+//                             mChatInput.showMenuLayout();
+//                             mChatInput.showCameraLayout();
+//                             sendSizeChangedEvent(calculateMenuHeight());
+//                             mChatInput.requestLayout();
+//                         }
+//                     }, 100);
+//                 }
+//                 mLastClickId = 2;
                 return false;
             }
 
