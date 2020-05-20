@@ -19,8 +19,17 @@ public class EventViewHolder<MESSAGE extends IMessage>
     }
 
     @Override
-    public void onBind(MESSAGE message) {
+    public void onBind(final MESSAGE message) {
+
         mEvent.setText(message.getText());
+        mEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mMsgEvenViewClickListener != null) {
+                    mMsgEvenViewClickListener.onEvenViewClick(message);
+                }
+            }
+        });
     }
 
     @Override

@@ -27,6 +27,14 @@ export default class MessageList extends Component {
     this._onStatusViewClick = this._onStatusViewClick.bind(this);
     this._onTouchMsgList = this._onTouchMsgList.bind(this);
     this._onPullToRefresh = this._onPullToRefresh.bind(this);
+    this._onEvenClick = this._onEvenClick.bind(this);
+  }
+
+  _onEvenClick(event: Event) {
+    if (!this.props.onEvenClick) {
+      return;
+    }
+    this.props.onEvenClick(JSON.parse(event.nativeEvent.message));
   }
 
   _onMsgClick(event: Event) {
@@ -79,7 +87,8 @@ export default class MessageList extends Component {
     return (
       <RCTMessageList 
           {...this.props} 
-          ref={PTR_LAYOUT} 
+          ref={PTR_LAYOUT}
+          onEvenClick={this._onEvenClick}
           onMsgClick={this._onMsgClick}
           onAvatarClick={this._onAvatarClick}
           onMsgLongClick={this._onMsgLongClick}
@@ -94,6 +103,7 @@ export default class MessageList extends Component {
 
 MessageList.propTypes = {
   messageListBackgroundColor: PropTypes.string,
+  onEvenClick: PropTypes.func,
   onMsgClick: PropTypes.func,
   onMsgLongClick: PropTypes.func,
   onAvatarClick: PropTypes.func,

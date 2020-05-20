@@ -104,6 +104,7 @@
 		62BD327820E4D8EB00867FBE /* RCTInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 623EA97B1EE55CB200EC43AE /* RCTInputView.m */; };
 		62BD327920E4D90000867FBE /* RCTMessageListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 623EA97F1EE55CB200EC43AE /* RCTMessageListView.m */; };
 		62BD327A20E4D9F900867FBE /* RCTAuroraIMUIFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B0CB33204E41C100D87F94 /* RCTAuroraIMUIFileManager.m */; };
+		F9A9794721D77AC800C97487 /* Kingfisher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9A9794621D77AC800C97487 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9A9794521D77AA800C97487 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F9A9794721D77AC800C97487 /* Kingfisher.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +255,7 @@
 		6298E7F11FB40D3400E53CAF /* IMUICustomMessageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMUICustomMessageContentView.swift; sourceTree = "<group>"; };
 		62B0CB33204E41C100D87F94 /* RCTAuroraIMUIFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTAuroraIMUIFileManager.m; sourceTree = "<group>"; };
 		62B0CB34204E41C100D87F94 /* RCTAuroraIMUIFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTAuroraIMUIFileManager.h; sourceTree = "<group>"; };
+		F9A9794621D77AC800C97487 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = RCTAuroraIMUI/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +337,7 @@
 		626021ED1ED96BA20038AB20 = {
 			isa = PBXGroup;
 			children = (
+				F9A9794621D77AC800C97487 /* Kingfisher.framework */,
 				623EA96F1EE55CB200EC43AE /* RCTAuroraIMUI */,
 				623EA99A1EE55D0800EC43AE /* RCTAuroraIMUI */,
 				623EA9A51EE55D0800EC43AE /* RCTAuroraIMUITests */,
@@ -616,6 +629,7 @@
 				623EA9951EE55D0800EC43AE /* Frameworks */,
 				623EA9961EE55D0800EC43AE /* Headers */,
 				623EA9971EE55D0800EC43AE /* Resources */,
+				F9A9794521D77AA800C97487 /* CopyFiles */,
 			);
 			buildRules = (
 			);

@@ -38,7 +38,7 @@ function constructNormalMessage() {
   if (Platform.OS === "ios") {
     user.avatarPath = RNFS.MainBundlePath + '/default_header.png'
   }
-  message.fromUser = user
+  message.fromUser = user;
 
   return message
 }

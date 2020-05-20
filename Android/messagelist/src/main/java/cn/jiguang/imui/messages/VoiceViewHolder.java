@@ -208,8 +208,12 @@ public class VoiceViewHolder<MESSAGE extends IMessage> extends BaseMessageViewHo
         mController.setLastPlayPosition(position, mIsSender);
         try {
             mMediaPlayer.reset();
-            mFIS = new FileInputStream(message.getMediaFilePath());
-            mMediaPlayer.setDataSource(mFIS.getFD());
+            if(message.getMediaFilePath().contains("http")) {
+                mMediaPlayer.setDataSource(message.getMediaFilePath());
+            } else {
+                mFIS = new FileInputStream(message.getMediaFilePath());
+                mMediaPlayer.setDataSource(mFIS.getFD());
+            }
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
             mMediaPlayer.prepare();
             mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {

@@ -9,7 +9,6 @@
 #import "RCTInputView.h"
 #import "RCTAuroraIMUIModule.h"
 
-
 @implementation RCTInputView
 
 - (instancetype)init {

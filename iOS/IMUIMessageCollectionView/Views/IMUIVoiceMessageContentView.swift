@@ -61,9 +61,14 @@ public class IMUIVoiceMessageContentView: UIView, IMUIMessageContentViewProtocol
       IMUIAudioPlayerHelper.sharedInstance.stopAudio()
       self.resetVoiceImage()
     } else {
-      
+        var url : URL
+        if (message?.webImageUrl!() == "") {
+            url = URL(fileURLWithPath: (message?.mediaFilePath())!)
+        } else {
+            url = URL(string: (message?.webImageUrl!())!)!
+        }
       do {
-        let voiceData = try Data(contentsOf: URL(fileURLWithPath: (message?.mediaFilePath())!))
+        let voiceData = try Data(contentsOf: url)
         IMUIAudioPlayerHelper
           .sharedInstance
           .playAudioWithData((self.message?.msgId)!,voiceData,

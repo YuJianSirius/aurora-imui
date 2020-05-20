@@ -329,7 +329,15 @@ RCT_CUSTOM_VIEW_PROPERTY(messageTextLineHeight, NSNumber, RCTMessageListView) {
 //self.delegate?.messageCollectionView(didTapMessageBubbleInCell: self, model: self.message!)
 - (void)messageCollectionView:(UICollectionView *)_ forItemAt:(NSIndexPath * _Nonnull)forItemAt model:(id)model {
   if(!_messageList.onTouchMsgList) { return; }
-  _messageList.onTouchMsgList(@{});
+  NSDictionary *messageDic;
+  if ([model isMemberOfClass:[RCTMessageModel class]]) {
+      RCTMessageModel *message = model;
+      messageDic = message.messageDictionary;
+  } else {
+      MessageEventModel *message = model;
+      messageDic = message.messageDictionary;
+  }
+  _messageList.onTouchMsgList((@{@"message": messageDic}));
 }
 
 /// Tells the delegate that user tap header image in message cell

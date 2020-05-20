@@ -64,6 +64,7 @@ public class MsgListAdapter<MESSAGE extends IMessage> extends RecyclerView.Adapt
     private OnMsgLongClickListener<MESSAGE> mMsgLongClickListener;
     private OnAvatarClickListener<MESSAGE> mAvatarClickListener;
     private OnMsgStatusViewClickListener<MESSAGE> mMsgStatusViewClickListener;
+    private OnMsgEvenViewClickListener<MESSAGE> mMsgEvenViewClickListener;
     private SelectionListener mSelectionListener;
     private int mSelectedItemCount;
     private LinearLayoutManager mLayoutManager;
@@ -253,6 +254,7 @@ public class MsgListAdapter<MESSAGE extends IMessage> extends RecyclerView.Adapt
             ((BaseMessageViewHolder) holder).mMsgClickListener = this.mMsgClickListener;
             ((BaseMessageViewHolder) holder).mAvatarClickListener = this.mAvatarClickListener;
             ((BaseMessageViewHolder) holder).mMsgStatusViewClickListener = this.mMsgStatusViewClickListener;
+            ((BaseMessageViewHolder) holder).mMsgEvenViewClickListener = this.mMsgEvenViewClickListener;
             ((BaseMessageViewHolder) holder).mMediaPlayer = this.mMediaPlayer;
             ((BaseMessageViewHolder) holder).mScroll = this.mScroll;
             ((BaseMessageViewHolder) holder).mData = this.mItems;
@@ -681,6 +683,16 @@ public class MsgListAdapter<MESSAGE extends IMessage> extends RecyclerView.Adapt
     public interface OnMsgStatusViewClickListener<MESSAGE extends IMessage> {
         void onStatusViewClick(MESSAGE message);
     }
+
+
+    public void setMsgEvenViewClickListener(OnMsgEvenViewClickListener<MESSAGE> listener) {
+        this.mMsgEvenViewClickListener = listener;
+    }
+
+    public interface OnMsgEvenViewClickListener<MESSAGE extends IMessage> {
+        void onEvenViewClick(MESSAGE message);
+    }
+
 
     /**
      * Holders Config Config your custom layouts and view holders into adapter. You

@@ -24,6 +24,7 @@ public abstract class BaseMessageViewHolder<MESSAGE extends IMessage>
     protected MsgListAdapter.OnMsgClickListener<MESSAGE> mMsgClickListener;
     protected MsgListAdapter.OnAvatarClickListener<MESSAGE> mAvatarClickListener;
     protected MsgListAdapter.OnMsgStatusViewClickListener<MESSAGE> mMsgStatusViewClickListener;
+    protected MsgListAdapter.OnMsgEvenViewClickListener<MESSAGE> mMsgEvenViewClickListener;
     protected MediaPlayer mMediaPlayer;
     protected boolean mScroll;
     protected List<MsgListAdapter.Wrapper> mData;
